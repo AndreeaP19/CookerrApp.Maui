@@ -1,4 +1,4 @@
-﻿namespace Cookerr;
+﻿namespace Cookerr.Views;
 
 public partial class MainPage : ContentPage
 {

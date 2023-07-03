@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Cookerr.Views.LoginView"
+             xmlns:iOsSpecific="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             iOsSpecific:Page.UseSafeArea="true"
+             BackgroundImageSource="cookerr_background.png">
+    <ContentPage.Content>
+        <Grid
+            Background="Transparent"
+            Margin="20, 100, 20, 20"
+            RowDefinitions="4*,*,Auto,*">
+
+            <Frame
+                Grid.Row="0"
+                HasShadow="False"
+                HeightRequest="200"
+                WidthRequest="200"
+                CornerRadius="100"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Padding="0"
+                IsClippedToBounds="True">
+                <Image
+                    Source="cookerr_logo_up.png"
+                    Aspect="AspectFill" />
+            </Frame>
+
+            <VerticalStackLayout
+                Grid.Row="2">
+                <Frame
+                    BorderColor="{StaticResource Primary}"
+                    Background="White"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    Margin="10"
+                    Padding="5"
+                    HasShadow="false">
+                    <HorizontalStackLayout
+                        Padding="5"
+                        Spacing="5"
+                        VerticalOptions="CenterAndExpand"
+                        HorizontalOptions="CenterAndExpand">
+                        <Image
+                            HeightRequest="20"
+                            WidthRequest="20"
+                            HorizontalOptions="Start"
+                            VerticalOptions="Center"
+                            Source="facebook.png">
+                        </Image>
+
+                        <Label
+                            Text="Continue with Facebook"
+                            FontSize="18"
+                            VerticalOptions="CenterAndExpand" />
+                        <HorizontalStackLayout.GestureRecognizers>
+                            <TapGestureRecognizer />
+                        </HorizontalStackLayout.GestureRecognizers>
+                    </HorizontalStackLayout>
+                </Frame>
+                <Button
+                    BorderColor="{StaticResource Primary}"
+                    BackgroundColor="{StaticResource Primary}"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    Margin="10, 0, 10, 10"
+                    Padding="5"
+                    TextColor="White"
+                    FontSize="18"
+                    FontFamily="OpenSansSemibold"
+                    Text="Login with E-mail"
+                    Clicked="Button_OnClicked">
+                </Button>
+            </VerticalStackLayout>
+            <HorizontalStackLayout
+                Grid.Row="3"
+                VerticalOptions="Center"
+                HorizontalOptions="CenterAndExpand">
+                <Label
+                    BackgroundColor="White"
+                    TextColor="Black"
+                    FontSize="Small"
+                    Text="Don't have an account?">
+                </Label>
+                <Label
+                    Margin="3,0"
+                    BackgroundColor="White"
+                    TextColor="{StaticResource Primary}"
+                    FontAttributes="Bold"
+                    FontSize="Small"
+                    Text="Sign up">
+                </Label>
+            </HorizontalStackLayout>
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>
