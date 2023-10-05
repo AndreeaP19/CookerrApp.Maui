@@ -32,6 +32,12 @@
 
     <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-ios|AnyCPU'">
       <CreatePackage>false</CreatePackage>
+      <CodesignKey>iPhone Developer</CodesignKey>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-maccatalyst|AnyCPU'">
+      <CreatePackage>false</CreatePackage>
+      <CodesignKey>Mac Developer</CodesignKey>
+      <PackageSigningKey>3rd Party Mac Developer Installer</PackageSigningKey>
     </PropertyGroup>
     <ItemGroup>
         <!-- App Icon -->
@@ -52,8 +58,10 @@
     </ItemGroup>
 
     <ItemGroup>
+        <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
         <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
         <PackageReference Include="Plugin.Fingerprint" Version="3.0.0-beta.1" />
+        <PackageReference Include="CommunityToolkit.Maui" Version="5.2.0" />
     </ItemGroup>
 
     <ItemGroup>
@@ -83,4 +91,11 @@
       </Compile>
     </ItemGroup>
 
+    <ItemGroup>
+      <None Remove="ViewModels\" />
+      <None Remove="ViewModels\Base\" />
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="ViewModels\Base\" />
+    </ItemGroup>
 </Project>

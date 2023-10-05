@@ -1,14 +1,12 @@
+using Cookerr.ViewModels;
+
 namespace Cookerr.Views;
 
 public partial class LoginView : ContentPage
 {
-    public LoginView()
+    public LoginView(LoginViewModel viewModel)
     {
         InitializeComponent();
-    }
-
-    private async void Button_OnClicked(object sender, EventArgs e)
-    {
-        await Shell.Current.GoToAsync("///UserNameAndPasswordView", true);
+        BindingContext = viewModel;
     }
 }
