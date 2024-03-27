@@ -31,6 +31,7 @@ public static class MauiProgram
     private static MauiAppBuilder RegisterServices(this MauiAppBuilder mauiAppBuilder)
     {
         mauiAppBuilder.Services.AddSingleton<IBiometricAuthenticationService, BiometricAuthenticationService>();
+        mauiAppBuilder.Services.AddSingleton<INavigationService, NavigationService>();
         return mauiAppBuilder;
     }
 
