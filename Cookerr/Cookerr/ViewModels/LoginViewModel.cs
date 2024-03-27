@@ -8,10 +8,12 @@ namespace Cookerr.ViewModels;
 public partial class LoginViewModel: BaseViewModel
 {
     private readonly IBiometricAuthenticationService _authService;
+    private readonly INavigationService _navigationService;
 
-    public LoginViewModel(IBiometricAuthenticationService authService):base()
+    public LoginViewModel(IBiometricAuthenticationService authService, INavigationService navigationService)
     {
         _authService = authService;
+        _navigationService = navigationService;
     }
 
     [RelayCommand]
@@ -48,8 +50,7 @@ public partial class LoginViewModel: BaseViewModel
         }
         else
         {
-            // handle not available state
-            await Shell.Current.GoToAsync("///UserNameAndPasswordView", true);
+            await _navigationService.NavigateTo(NavigationNodes.UserNameAndPasswordView);
         }
     }
 }
